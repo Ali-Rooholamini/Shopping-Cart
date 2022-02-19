@@ -108,31 +108,11 @@ header{
     font-weight: bolder;
     cursor: pointer;
 }
-@media screen and (max-width: 356px) {
+@media screen and (max-width: 450px) {
     .category button{
         padding: 5px 3px;
         margin: 0px 5px;
     }
-}
-
-/* Modal Styles */
-.modal{
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    top: -101vh;
-    transition: top 500ms ease-in-out;
-    display: flex;
-    justify-content: center;
-}
-.modal.show{
-    top: 0;
-}
-.basketModal{
-    width: 80%;
-    height: 200px;
-    background-color: black;
-    margin-top: 200px;
 }
 
 /* Product Section */
@@ -176,7 +156,7 @@ header{
     display: flex;
     justify-content: center;
 }
-.product .addToCart button{
+.product .addToCart button , .basketBtn{
     font-size: 16px;
     font-weight: bolder;
     border: none;
@@ -188,7 +168,7 @@ header{
     cursor: pointer;
     transition: 150ms ease-in;
 }
-.product .addToCart button:hover{
+.product .addToCart button:hover , .basketBtn:hover{
     background-color: #8019d4;
     color: #e6cbfd;
 }
@@ -219,4 +199,89 @@ header{
     .productsCenter{
         justify-content: center;
     }
+}
+
+/* Modal Styles */
+.backDrop{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(65, 65, 65, 0.7);
+    z-index: 20;
+    top: 0;
+    left: 0;
+    display: none;
+}
+.basketModal{
+    width: 450px;
+    height: auto;
+    border-radius: 7px;
+    background-color: white;
+    box-shadow: 0px 0px 6px 2px #7f2bc9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 8px;
+    position: fixed;
+    top: -101vh;
+    z-index: 30;
+}
+.basketFooter{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.cart , .cartControl{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.cart{
+    width: 100%;
+    margin-bottom: 30px;
+}
+.cart > img{
+    width: 125px;
+    height: 70px;
+    border-radius: 7px;
+}
+.cartDesc{
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    user-select: none;
+    width: 30%;
+}
+.cartDesc span:first-child{
+    font-weight: bolder;
+    margin-bottom: 5px;
+    flex-wrap: wrap;
+}
+.cartDesc span:last-child{
+    color: rgb(148, 148, 148);
+    font-weight: bolder;
+    font-size: 14px;
+}
+.countControl{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#moreBtn , #lessBtn , #deleteCart{
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    cursor: pointer;
+}
+#moreBtn{
+    color: #7f45ad;
+}
+#lessBtn{
+    color: rgb(209, 24, 61);
+}
+.countControl > span{
+    font-size: 13px;
+    font-weight: bolder;
+    user-select: none;
 }
